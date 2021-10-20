@@ -1,18 +1,11 @@
 [build]
-  command = "#"
   functions = "functions"
-  publish = "dist"
+  publish = "build"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[redirects]]
-from = "/:width/:height"
-to = "/.netlify/functions/generator/:width/:height"
-status = 200
-force = true
 
 [[headers]]
   for = "/*"
