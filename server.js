@@ -1,6 +1,6 @@
 const serverless = require('serverless-http');
 const express = require('express');
-const images = require('../../images/images.json');
+const images = require('./images.json');
 
 const app = express();
 
