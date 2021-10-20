@@ -3,17 +3,6 @@
   functions = "functions"
   publish = "public"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-from = "/:width/:height"
-to = "/.netlify/functions/server/:width/:height"
-status = 200
-force = true
-
 [[headers]]
   for = "/*"
   [headers.values]
