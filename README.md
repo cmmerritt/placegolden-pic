@@ -1,1 +1,2 @@
-# placegolden-pic
+Serving the requested image for placegolden
+
