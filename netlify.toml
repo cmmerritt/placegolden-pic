@@ -4,9 +4,10 @@
   publish = "public"
 
 [[redirects]]
-  from = "/*"
+  from = "/:width/:height"
   to = "/.netlify/functions/server/:width/:height"
   status = 200
+  force = true
 
 [[headers]]
   for = "/*"

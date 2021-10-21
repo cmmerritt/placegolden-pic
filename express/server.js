@@ -6,15 +6,14 @@ const app = express();
 
 const router = express.Router();
 
-app.use(express.json());
-app.use(express.static('public'));
-app.use('/.netlify/functions/server', router);
+// app.use(express.json());
+// app.use(express.static('public'));
 
 app.get('/express_backend', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
 
-router.get('/:width/:height', (req, res, next) => {
+app.get('/:width/:height', (req, res, next) => {
     const { width, height } = req.params;
     const yourImage = images[Math.floor(Math.random() * images.length)];
     res.writeHead(200, {'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400'});
@@ -24,6 +23,8 @@ router.get('/:width/:height', (req, res, next) => {
       '" preserveAspectRatio="xMidYMid slice"> ' +
       '<image xlink:href="' + yourImage.data + '" width="' + yourImage.width + '" height="' + yourImage.height + '" /></svg>');
 });
+
+app.use('/.netlify/functions/server', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
