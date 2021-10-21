@@ -6,9 +6,6 @@ const app = express();
 
 const router = express.Router();
 
-// app.use(express.json());
-// app.use(express.static('public'));
-
 app.get('/express_backend', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
